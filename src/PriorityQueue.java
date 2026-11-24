@@ -126,7 +126,7 @@ public T displayTheFirstItem(){
     //إرجاع عدد العناصر في الطابور
 public int getSize(){return rear+1;}
 
-
+//التراجع عن المعالجة
     public T undoDequeue(T item,int pr){
 
         if(isFull()){
@@ -159,8 +159,16 @@ public int getSize(){return rear+1;}
     }
 
 
-
-
+//عرض جميع العناصر
+public  void disaplay(){
+        if(isEmpty()){
+            System.out.println("There are no items");
+            return;
+        }
+    for (int i=front;i<=rear;i++){
+        System.out.println(arr[i]);
+    }
+}
 
 
 

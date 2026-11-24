@@ -38,10 +38,11 @@ void main(String[] args) {
         3. Display Normal Requests
         4. Add Priority Request
         5. Process Priority Request
-        6. Manage Deque
-        7. Undo Last Operation
-        8. Display Last Operation
-        9. Display System Statistics
+        6.Display Priority Requests
+        7. Manage Deque
+        8. Undo Last Operation
+        9. Display Last Operation
+        10. Display System Statistics
         0. Exit
         ===================================
         """);
@@ -102,8 +103,11 @@ void main(String[] args) {
                     }
 
                     break;
-
                 case 6:
+                    requestPriorityQueue.disaplay();
+                    break;
+
+                case 7:
                     int x2=1;
 
 
@@ -193,7 +197,7 @@ void main(String[] args) {
 
                     break;
 
-                case 7:
+                case 8:
                     if (requestStack.isEmpty()) {
                         System.out.println("There is no operation to undo.");
                         break;
@@ -247,11 +251,11 @@ void main(String[] args) {
                     System.out.println("Undo completed successfully.");
                     break;
 
-                case 8:
+                case 9:
                     System.out.println(lastOperation);
                     break;
 
-                case 9:
+                case 10:
                     System.out.println("Normal Requests: "+requestSimpleQueue.getSize());
                     System.out.println("Priority Requests: "+requestPriorityQueue.getSize());
                     System.out.println("Deque Requests: "+requestDeque.getSize());
