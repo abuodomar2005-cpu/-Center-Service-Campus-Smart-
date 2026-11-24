@@ -84,7 +84,7 @@ public T dequeue(){
     System.out.println("There are no items to dequeue.");
     return null;
 }
-//حذف بواسطة الid
+//حذف بواسطة المقارنة بين الأوبجكتس
 public T removeBySearch(T ob){
     if (isEmpty()) {
         System.out.println("There are no items to remove.");
@@ -125,4 +125,44 @@ public T displayTheFirstItem(){
     }
     //إرجاع عدد العناصر في الطابور
 public int getSize(){return rear+1;}
+
+
+    public T undoDequeue(T item,int pr){
+
+        if(isFull()){
+            System.out.println("There is no empty space to add.");
+            return null;
+        }
+
+        if(isEmpty()){
+            priority[0]=pr;
+            arr[++rear]=item;
+            return item;
+        }
+
+        int i=0;
+
+        while(i<=rear && priority[i]<pr){
+            i++;
+        }
+
+        for(int j=rear;j>=i;j--){
+            priority[j+1]=priority[j];
+            arr[j+1]=arr[j];
+        }
+
+        priority[i]=pr;
+        arr[i]=item;
+        rear++;
+
+        return item;
+    }
+
+
+
+
+
+
+
+
 }

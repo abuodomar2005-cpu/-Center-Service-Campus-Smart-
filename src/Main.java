@@ -25,6 +25,8 @@ void main(String[] args) {
     int count4=0;
 
 
+    int pr=0;
+
     do {
         int choice;
         try {
@@ -94,6 +96,7 @@ void main(String[] args) {
                         num=4;
                         lastOperation=	"Priority Request Processed";
                         count2++;
+                        pr= request4.getPriority();
 
                     }
 
@@ -105,7 +108,7 @@ void main(String[] args) {
 
                         do{
                             try {
-                            int choice2;
+                                int choice2;
                         System.out.println("""
                                 ======= MANAGE DEQUE =======
                                 1. Add At The Beginning
@@ -183,7 +186,7 @@ void main(String[] args) {
                             }catch (Exception e) {
 
                                 System.out.println("An error occurred: " + e.getMessage());
-
+                               input.nextLine();
                             }
                         } while (x2 != 0);
 
@@ -215,7 +218,7 @@ void main(String[] args) {
                             break;
 
                         case 4:
-                            requestPriorityQueue.enqueue(requestStack.pop(), requestStack.pop().getPriority());
+                            requestPriorityQueue.undoDequeue(requestStack.pop(),pr);
                             lastOperation = "Undo: Priority Request Processing";
                             break;
 
@@ -274,9 +277,7 @@ void main(String[] args) {
                 default:
                     System.out.println("Invalid choice. Try again.");
             }
-
-
-
+            
         System.out.println();
         }
         catch (Exception e) {
