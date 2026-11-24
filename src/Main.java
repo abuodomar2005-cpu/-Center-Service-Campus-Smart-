@@ -65,6 +65,7 @@ void main(String[] args) {
                     if (request2 != null) {
                         System.out.println("Processing successfully.");
                         System.out.println(request2);
+                        requestInput.setID(request2.getRequestID());
                         requestStack.push(request2);
                         num=2;
                         count++;
