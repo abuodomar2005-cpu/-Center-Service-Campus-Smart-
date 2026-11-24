@@ -38,7 +38,7 @@ void main(String[] args) {
         3. Display Normal Requests
         4. Add Priority Request
         5. Process Priority Request
-        6.Display Priority Requests
+        6. Display Priority Requests
         7. Manage Deque
         8. Undo Last Operation
         9. Display Last Operation
